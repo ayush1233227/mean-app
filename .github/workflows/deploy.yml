@@ -19,23 +19,50 @@ jobs:
       - name: Log in to DockerHub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ ayush1233 }}
+          password: ${{ Shree@108 }}
 
       - name: Build and push backend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mean-backend ./backend
-          docker push ${{ secrets.DOCKER_USERNAME }}/mean-backend
+          docker build -t ${{ ayush1233 }}/mean-backend ./backend
+          docker push ${{ Shree@108 }}/mean-backend
 
       - name: Build and push frontend image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/mean-frontend ./frontend
-          docker push ${{ secrets.DOCKER_USERNAME }}/mean-frontend
+          docker build -t ${{ ayush1233 }}/mean-frontend ./frontend
+          docker push ${{ Shre@108 }}/mean-frontend
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.AWS_SSH_KEY }}
+          ssh-private-key: ${{  -----BEGIN RSA PRIVATE KEY-----
+MIIEpAIBAAKCAQEAx3Lg2MkjaAJLGamM/dtMS8+BVhx31ZoiQCcH+mx5zlidVdcS
+pDLSp8Z52g/GYvET35sVKlyY6OuS/2Tea8E/aLBdramosEqZ5E8sBr12qZ5XZj50
+AuU8K6YsSPbtI8twHq7lLdoYztbuXNQneNdxNW0YvUsRdbA5riAoMkd5eSk/9m8l
+AP4c0Jl/RZWkkk6rVy0d0UV3axihLX30deR2lubMdTb7ewp5EZHke+XLln9MBSQY
+tO9D0jH8QgGwQ2lvz+BAX0hm5yLReX0kS730z0PpYhTBwXOl+WU9J54d6NdkcFgO
+dXbShW8upRlmMH4+z7NFaO8cLk+W8bB/fOWPGwIDAQABAoIBAQCPk6k9Jf5w/0Wk
+4aN3k4inAmfu32t8vwps+CwMIE7HNo98nejzfwqacIyDZ9u+miFeVLu11RbWhc86
+PxjGpUTKTjwBqiKfVfTWoA/ngjiL/kqYddj5xJ++JE+47tjjba32yJx+l4RIUf0h
+ojAQE7eRaEno6sNU31mGeeu11jIh/0PZJMH4CNR9f0dANEmnfGs3T+fSw8CLfLBW
+59CTJHtGEszl0f0Euijsg1iulBfaPrYs6UDYIGLyBT828PpqLNypRV5/xuawHxG5
+uiZDDcvItRH1aY5uhwYS6LM+C/tveT+Zn9w2Z9ka5P7J0YIcVbsGd7EY06cj7gXi
+zL87r3nhAoGBAPGDHTiB8L7xWlBWxVs0+fL+hUCUX9InG/LsNmFuyOO2kyAUUK1s
+pbba7vu3j16Qy5f77V6Y0Ijf6XM7V97YYWesygrLk4Yjx4UJQhdl6mEwARZ+zBf6
+mTf2twyIeDybqeFszubh0rFDZAT8q8/kcRE3H2NrG4lozpIR9JoMzX5ZAoGBANNp
+zI/jMeS2eaRLdswpCwnfMvn4waQCxH+GuVgVImBB01C8i1htZqYc096LVgLZq5VT
+TpfO87R/cOOZoIgiuZia4zQmKh18/YBJkx5dILvGEKNcrsZ9+H+wiJXLrhfDKaGw
+a1UwO1RvNhNGjvhGQdD3/TV0lNtYM7TrREpdKdKTAoGAULNaMUaiNnuZjRzhh4+V
+MdBAoIqz1hpBaZPqu/Xz5LteQCrppnmWihpwHuaAXr4NefSxpZl0nTgM3vdmbk1p
+huYjASZzXjBYfCjSz9S7U8xhoK2v7xdK2Xt0QRjc7IurYWslW9r7t0Xohw4TLz2L
+VpBPyb3BjtHZrM+ZJ1y90ckCgYBPEa/HVOKxNqoSD4NT4jnVrFvFcAsES2CwjXO+
+hNEBjTz6Yjn/jZMpp3h6MESv9jcdNzYawvUU2eEfzrJimBIwCCXXuDpiIwAwvdO/
+NHdsoyxP3PclF7IcF6tN0wq+qmhkp7XM+6gE8T8ZQHdyVdyBym4yUvLlgnx8Os2k
+vmlI7wKBgQDeK7iKCIILTBZNNSVVwTySKT0H56MeZcRTgHx5SNaz2zINgHbfeQ6c
+gK975o7JFUpMpImzdrowFdU/FEoEOyU9rJ+/HL8WTT49R26/R6gm0Qgx0x0qjD8Y
+biiX0bA6YnJfSbDyV8UBplp4yyEqItEk6n+yCbPDumiSfOZWwp7uEQ==
+-----END RSA PRIVATE KEY-----
+}}
 
       - name: Deploy to AWS EC2
         run: |
